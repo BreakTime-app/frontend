@@ -1,26 +1,24 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import styled from 'styled-components/native';
 
-const Container = styled(SafeAreaView)`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
-`;
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Text = styled.Text`
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-`;
+import HomeScreen from './src/screens/Home';
+import LoginScreen from './src/screens/Login';
 
-function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+
   return (
-    <Container>
-      <Text>HI</Text>
-    </Container>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  )
 }
 
 export default App;
