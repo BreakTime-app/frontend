@@ -3,8 +3,8 @@ import { View, Text, Button } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   const handleLogout = () => {
-    // 로그아웃 로직 (예: AsyncStorage에서 토큰 제거)
-    navigation.replace('Login'); // LoginScreen으로 이동
+    console.log(navigation);
+    navigation.replace('Login');
   };
 
   return (
